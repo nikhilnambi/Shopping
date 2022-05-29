@@ -1,0 +1,63 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+
+
+
+.carousel{
+    left:0px;
+    margin-top: -20px;
+}
+.carousel-inner{
+    width:100%;
+   
+}
+#categ{
+   text-align:center;
+   font-size:27px;
+   padding-top:30px;
+   color:#F55D2C;
+}
+
+/* .cards{
+    width:20%;
+    height:20%;
+    
+    grid-template-columns:repeat(autofit,minmax(200px,1fr));
+    gap:20px;
+} */
+h4{
+    text-align:center;
+     color:black;
+}
+h4:hover{
+    color:red;
+}
+a{  
+    text-decoration: none;
+    text-align:center;
+    margin-top: 10px;
+}
+
+#featured{
+   text-align:center;
+   display:block;
+   padding-top:30px;
+   color:#2B2F4C;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 740px) {
+    
+}
+
+
+
