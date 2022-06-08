@@ -15,7 +15,7 @@
 
 <div class="nav navbar-expand-lg container">
   <ul  class="nav-items">
-  <li><img id="img" src="./assets/images/ff_logo.png"  class="img-fluid"></li>
+  <li><img id="img" routerLink=""  src="./assets/images/ff_logo.png"  class="img-fluid"></li>
   <br>
   
   <li class="col-md-6 mb-4 searchpdt">
@@ -54,8 +54,8 @@
     </button>
   
     <ul class="dropdown-menu">
-      <li><a id="login" href="#">Seller Login</a></li>
-      <li><a id="login" href="#">Buyer Login</a></li>
+      <li><a id="login" [routerLink]="['/login']">Seller Login</a></li>
+      <li><a id="login" [routerLink]="['/sign-in']">Buyer Login</a></li>
      </ul>
   </div>
   </li>
@@ -68,8 +68,8 @@
     </button>
   
     <ul class="dropdown-menu">
-      <li><a id="login" href="#">Seller Sign Up</a></li>
-      <li><a id="login" href="#">Buyer Sign Up</a></li>
+      <li><a id="login" [routerLink]="['/signup-seller']">Seller Sign Up</a></li>
+      <li><a id="login" [routerLink]="['/sign-up']">Buyer Sign Up</a></li>
      </ul>
   </div> 
   
@@ -97,17 +97,18 @@
             </button>
           
             <ul class="dropdown-menu category productdrop">
-              <li><a id="prd" href="#">Organic Vegetables</a></li>
-              <li><a id="prd" href="#">Diary Products</a></li>
-              <li><a id="prd" href="#">Fruites</a></li>
+              <li><a id="prd" [routerLink]="['/vegetables']">Organic Vegetables</a></li>
+              <li><a id="prd" [routerLink]="['/dairy']">Diary Products</a></li>
+              <li><a id="prd" [routerLink]="['/fruits']">Fruites</a></li>
              </ul>
           </div>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right navlin" style="margin-right: 20%;">
-        <li class="nav-item "><a class="nav-link" id="licol" href="#">Products</a></li>
-        <li class="nav-item "><a class="nav-link" id="licol" href="#">About Us</a></li>
-        <li class="nav-item "><a class="nav-link" id="licol" href ="#">Contact Us</a></li>
+        <li class="nav-item "><a class="nav-link"  id="licol" routerLink="">Home</a></li>
+        <li class="nav-item "><a class="nav-link"  id="licol" [routerLink]="['/products']">Products</a></li>
+        <li class="nav-item "><a class="nav-link" [routerLink]="['/about-us']" id="licol">About Us</a></li>
+        <li class="nav-item "><a class="nav-link" [routerLink]="['/contact-us']" id="licol" >Contact Us</a></li>
       </ul>
     </div>
   </div>

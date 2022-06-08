@@ -1,0 +1,16 @@
+.font-poppins {
+    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  }
+
+  .ng-valid[required],.ng-valid[pattern],.ng-valid.required  {
+    border-left: 5px solid #42A948;
+    border-color: #53f35b;
+  }
+   input:focus{
+    border-color:red;
+  }
+
+ 
+  input{
+    border-left: 5px solid #42A948;
+  }

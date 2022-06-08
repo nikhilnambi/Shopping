@@ -1,0 +1,90 @@
+<app-header> </app-header>
+ <form  #usersignup="ngForm" (ngSubmit)="AddSeller()">
+    <div class="form-group">
+      <input class="form-control " type="text" placeholder="Name" name="name" required minlength="4" [(ngModel)]="seller.name"
+       #name="ngModel" autocomplete="off" >
+
+       <div *ngIf="name.invalid && (name.dirty || name.touched)"
+       class="alert">
+   
+     <small *ngIf="name.errors?.['required']">
+       Name is required.
+     </small>
+     <small class="text-danger" *ngIf="name.errors?.['minlength']">
+       Name must be at least 4 characters long.
+     </small>
+    </div>
+    <br>
+
+     
+
+    <div class="form-group">
+      <input class="form-control " type="email" placeholder="Email" required name="email"
+      [(ngModel)]="seller.email" 	pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  [class.is-invalid]="email.invalid && email.touched" #email="ngModel" autocomplete="off">
+     
+      <br>
+      <div class="alert" *ngIf="email.errors && (email.invalid || email.touched)">
+        <!-- <small *ngIf="email.errors?.['required']">email id is required</small> -->
+        <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter valid email id</small>
+      </div>
+      <div *ngIf="email.valid">
+        <small class="text-success"></small>
+      </div>
+    
+    </div>
+
+    <div class="form-group">
+      <input class=" form-control" type="text" pattern="[6-9]{1}[0-9]{9}" [(ngModel)]="seller.phone" placeholder="Phone number" name="contact"
+      [class.is-invalid]="contact.invalid && contact.touched" #contact="ngModel" autocomplete="off">
+      
+      <div class="alert" *ngIf="contact.errors && (contact.invalid || contact.touched)">
+        <div *ngIf="contact.errors?.['required']">Phone number is required</div>
+        <small class="text-danger" *ngIf="contact.errors?.['pattern']">Enter valid Phone number</small>
+      </div>
+    
+      <div *ngIf="contact.valid">
+        <small class="text-success"></small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" type="password" required placeholder="Enter password" minlength="8" [(ngModel)]="seller.password" name="password" id="p1"
+        autocomplete="off" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" #password="ngModel"
+        [class.is-invalid]="password.invalid && password.touched ">
+
+        <div class="alert" *ngIf="password.errors && (password.invalid || password.touched)">
+          <!-- <small *ngIf="password.errors?.['required']">password required</small> -->
+          <small class="text-danger" *ngIf="password.errors?.['pattern']">password should contain 8 letters lowercase,uppercase,number & symbol</small>
+          
+        </div>
+        <div *ngIf="password.valid">
+          <small class="text-success"></small>
+        </div>
+    </div>
+     
+
+    <!-- <div class="form-group">
+      <input class=" form-control" type="password" placeholder="Re-enter password" name="password" id="p2"
+       title="Please enter valid and strong password"
+        autocomplete="off"/>
+    </div> -->
+    <div class="p-t-10">
+      <!-- <center> -->
+        <button class="btn btn--pill btn--green" [disabled]="usersignup.form.invalid" type="submit">Register</button>
+        <button class="btn btn--pill btn--green" style="margin-left: 10px;" type="reset">Reset</button>
+      <!-- </center> -->
+    </div>
+
+
+
+ 
+
+  <div class="niche">
+    <!-- <center> -->
+      <a [routerLink]="['']" ><i class="fa fa-arrow-circle-left" aria-hidden="true" style="color:white;">
+          Goback</i></a>
+      <a  [routerLink]="['/login']" id="fp">Login?</a>
+    <!-- </center> -->
+  </div>
+</div>
+</form>

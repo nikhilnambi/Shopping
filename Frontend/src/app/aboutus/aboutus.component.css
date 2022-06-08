@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+
+h3{
+    
+    
+    text-align: center;
+   
+
+}
+
+p{
+    padding:10px 40px 0px 40px;
+    justify-content: space-between;
+}
+.box{
+    padding:15px 0px 15px 0px;
+   
+}
+
+/*
+.left{
+    margin-left:-1%;
+    margin-top: 2%; 
+    justify-content: space-between;
+    padding-right:10px;
+}
+.right{
+    margin-left:60%;
+    margin-top:-6% !important;
+    padding-left:-20px;
+} */
+h4{
+    padding-left: 5%;
+}
+
+
+
