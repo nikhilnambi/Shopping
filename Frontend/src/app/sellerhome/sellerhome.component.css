@@ -1,0 +1,23 @@
+.table-responsive{
+    background-color: aliceblue;
+}
+th,td{
+    font-size: large;
+}
+h3{
+    padding-top:20px;
+}
+
+.table-responsive{
+    padding:20px 0px 20px 0px;
+   
+}
+.add{
+    padding-top:20px;
+    padding-left:10px;
+}
+
+a{
+    text-decoration: none;
+    color:antiquewhite;
+}

@@ -10,19 +10,28 @@ mongoose.connect("mongodb+srv://usernk:usernk@ictak.svswr.mongodb.net/Shopping?r
 //     if(err) throw err;
 
 //  })
-// connecting and creating database
 
-//Schema definition
+
+
+
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-    name: String,
-    email:String,
-    phone:String,
-    password:String
+const CartSchema = new Schema({
+    
+    productname:String,
+    category:String,
+    date:String,
+    quantity:String,
+    description:String,
+    price:Number,
+    rating:String,
+    cartquantity:String,
+    sellerid:String,
+    image:String,
+    userid:String
 });
 
 // Model creation
-var sellerdata = mongoose.model("sellerdata", UserSchema);
+var cartdata = mongoose.model("cartdata", CartSchema);
 
-module.exports = sellerdata;
+module.exports = cartdata;

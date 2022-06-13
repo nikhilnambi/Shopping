@@ -1,0 +1,66 @@
+<app-userheader></app-userheader>
+<fieldset>
+    <form  #addtocart="ngForm" (ngSubmit)="cartProduct()">
+<div class="container">
+	<img src="{{products.image}}"/>
+	<div class="details">
+	  <div class="header">
+		<span class="name">
+           {{products.productname}}
+		</span>
+        <span class="category">
+            {{products.category}}
+         </span>
+		
+		<span class="favorite">❤</span>
+	  </div>
+	  <div class="rating">
+		<!-- <span *ngFor="let stars of product.rating">
+		<li><i class="fa fa-star"></i></li> -->
+	<!-- </span> -->
+	  </div>
+  
+  
+  
+	  <div class="description">
+		<span>
+            <strong>{{products.description}}</strong> 
+          </span>
+	  </div>
+  
+	  <div class="price">
+		<span>
+		   &#8377;{{products.price}}/kg
+		</span>
+	  </div> 
+      
+
+      <span>Select Your Quantity</span><br>
+      <select [(ngModel)]="cartData.cartquantity" #cartquantity="ngModel" name="cartquantity" required>
+        <option disabled active value="">Available Quantity</option>
+        <option>1 Kg</option>
+      </select><br><br>
+
+      <!-- <span>Select Your Quantity</span>
+       <form (ngSubmit)="Quantity()">
+	  <select  class="form-control">
+    
+        <option>1 Kg</option>
+        <option>2 Kg</option>
+        <option>3 Kg</option>
+        <option>4 Kg</option>
+        <option>5 Kg</option>
+        
+      </select><br>
+    </form>  -->
+  
+	  <button type="submit" [disabled]="addtocart.form.invalid" (click)="addToCart()">Add To Cart</button><br>
+
+    <div *ngIf="!toDisplay">
+	  <button  (click)="goTocart()">Go To Cart</button>
+    </div>
+	</div>
+  </div>
+</form>
+</fieldset>
+

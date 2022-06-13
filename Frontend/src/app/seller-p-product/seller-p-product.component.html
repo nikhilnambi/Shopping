@@ -1,0 +1,145 @@
+<app-sellerheader></app-sellerheader>
+
+
+<div class="container">
+    <h3 style="text-align:center">Sell Product</h3>
+    <form  #addproduct="ngForm" (ngSubmit)="updateProduct()">
+        <fieldset>
+          <div class="form-group">
+            <label>Product Name</label>
+            <input type="text"
+                   class="form-control" [(ngModel)]="productData.productname" #productname="ngModel" name="productname" required>
+           
+                <div *ngIf="productname.invalid && (productname.dirty || productname.touched)"
+                   class="alert">
+               
+                 <small *ngIf="productname.errors?.['required']">
+                   product name is required.
+                 </small>
+                 
+                </div>
+    
+        </div>
+    
+         
+      
+          <div class="form-group">
+            <label>Quantity</label>
+            <input type="number"
+                   class="form-control" [(ngModel)]="productData.quantity" #quantity="ngModel" name="quantity"  required>
+                   <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)"
+                   class="alert">
+               
+                 <small *ngIf="quantity.errors?.['required']">
+                   product quantity is required(in kg)
+                 </small>
+                 
+                </div>
+          </div>
+          
+        </fieldset>
+    
+        <div class="form-group">
+            <label>Category</label>
+            <select class="form-control"  [(ngModel)]="productData.category" #category=ngModel name="category" required>
+              <option disabled active value="">Please select Category</option>
+              <option>Vegetables</option>
+              <option>Fruits</option>
+              <option>Diary Products</option>
+          
+            </select>
+            <div *ngIf="category.invalid && (category.dirty || category.touched)"
+                   class="alert">
+               
+                 <small *ngIf="category.errors?.['required']">
+                  Choose Category
+                 </small>
+                 
+                </div>
+          </div>
+      
+        <div class="form-group">
+          <label>Release Date</label>
+          <input type="date"
+                 class="form-control" [(ngModel)]="productData.date" #date="ngModel" name="date" required>
+                 <div *ngIf="date.invalid && (date.dirty || date.touched)"
+                 class="alert">
+             
+               <small *ngIf="date.errors?.['required']">
+                Choose date
+               </small>
+               
+              </div>
+            </div>
+      
+        <div class="form-group">
+          <label>Description</label>
+          <textarea type="text"
+                 class="form-control" min="30" max="50" required  [(ngModel)]="productData.description" #description="ngModel" name="description">
+          </textarea>
+          <div *ngIf="description.invalid && (description.dirty || description.touched)"
+                 class="alert">
+             
+               <small *ngIf="description.errors?.['required']">
+                Give small description about your product
+               </small>
+               
+              </div>
+        </div>
+    
+        <div class="form-group">
+            <label>price(per quantity)</label>
+            <input type="number" min="0" max="10000"
+                   class="form-control" [(ngModel)]="productData.price" #price="ngModel" name="price" required  >
+                   <div *ngIf="price.invalid && (price.dirty || price.touched)"
+                   class="alert">
+               
+                 <small *ngIf="price.errors?.['required']">
+                  Enter the amount to sell your product
+                 </small>
+                 
+                </div>
+              </div>
+    
+          <div class="form-group">
+            <label>Star Rating</label>
+            <input type="number"
+                   class="form-control" min="0" max="5" [(ngModel)]="productData.rating"  #rating="ngModel" name="rating" required>
+                   <div *ngIf="rating.invalid && (rating.dirty || rating.touched)"
+                   class="alert">
+               
+                 <small *ngIf="rating.errors?.['required']">
+                  Enter the rating u like to give the product
+                 </small>
+                 
+                </div>
+    
+                </div>
+    
+          <div class="form-group">
+            <label>Image Url</label>
+            <input type="text"
+                   class="form-control" [(ngModel)]="productData.image" #image="ngModel" type='text' name="image" required>
+                   <div *ngIf="image.invalid && (image.dirty || image.touched)"
+                   class="alert">
+               
+                 <small *ngIf="image.errors?.['required']">
+                  Give the image link of your product
+                 </small>
+                 
+                </div>
+                </div>
+    
+          <div class="form-group">
+    
+            <button class="btn btn-primary" type="submit" [disabled]="addproduct.form.invalid">Update Product</button>
+            <button  class="btn btn-primary" type="reset">Reset</button>
+    
+          </div>
+    
+    
+    
+      
+       
+      </form>
+    </div>

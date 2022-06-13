@@ -1,0 +1,61 @@
+<app-sellerheader></app-sellerheader>
+
+<h3 style="text-align:center">{{title}} </h3>
+<br>
+     
+<div  *ngIf="errormessage" class="alert alert-danger">
+    {{errormessage}} 
+  </div>
+<div  class="add"   *ngIf="errormessage">
+ <button class="btn btn-primary"><a routerLink="/add-product">Add & Sell Product</a></button>
+</div>
+    
+        <div *ngIf="!errormessage" class="table-responsive" >
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary"
+                              (click)="toggleImage()">
+                              {{showImage? 'Hide':'Show'}} Image
+                            </button>
+                        </th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Release Date</th>
+                        <th>Description</th>
+                        <th>Star Rating</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                 
+                    
+                    
+                    <tr *ngFor="let product of products">
+                        <td><img *ngIf='showImage'
+                            src="{{product.image}}"
+                            [title]='product.productname'
+                            [style.width.px]='imageWidth'
+                            [style.margin.px]='imageMargin'></td>
+                        <td>{{product.productname}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.date}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.rating}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td><button class="btn btn-success" (click)="editProduct(product)">Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="deleteProduct(product)">Delete</button></td>
+                   
+                    
+                    </tr>
+                    
+                </tbody>
+
+            </table>
+        </div>
+  
+

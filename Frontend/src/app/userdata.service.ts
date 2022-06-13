@@ -32,6 +32,19 @@ export class UserdataService {
      return this.http.post<any>(this._url,user)
   }
 
+  loggedIn(){
+    return !!localStorage.getItem('token')
+  }
+
+  getToken(){
+    return localStorage.getItem('token')
+  
+  }
+
+  getData(){
+    return sessionStorage.getItem('user');
+  }
+
   //seller-login
 
  
@@ -39,4 +52,6 @@ export class UserdataService {
   loginSeller(seller:any){
      return this.http.post<any>('http://localhost:2000/sellerlogin',seller)
   }
+
+
 }

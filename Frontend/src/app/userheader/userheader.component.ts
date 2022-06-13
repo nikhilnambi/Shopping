@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import{UserdataService} from '../userdata.service';
 
 @Component({
   selector: 'app-userheader',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserheaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _auth:UserdataService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  logoutUser(){
+    localStorage.removeItem('token');
+    sessionStorage.removeItem('user');
+    this.router.navigate(['']);
+  }
+
+  getName(){
+
+   return sessionStorage.getItem('username');
+
+  }
+
+  
+
+  
+
+  
+
+  
 }

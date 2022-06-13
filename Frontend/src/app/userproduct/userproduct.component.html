@@ -1,0 +1,40 @@
+<app-userheader></app-userheader>
+<fieldset>
+<div class="container" *ngFor="let product of products">
+	<img [src]="product.image"/>
+	<div class="details">
+	  <div class="header">
+		<span class="name">
+		  {{product.productname}}
+		</span>
+		
+		<span class="favorite {{product.category? '': 'not'}}">❤</span>
+	  </div>
+	  <div class="rating">
+		<!-- <span *ngFor="let stars of product.rating">
+		<li><i class="fa fa-star"></i></li> -->
+	<!-- </span> -->
+	  </div>
+  
+  
+  
+	  <div class="cook-time">
+		<span>
+		  <strong>{{product.description}}</strong> 
+		</span>
+	  </div>
+  
+	  <div class="price">
+		<span>
+		  {{product.price}} &#8377;/kg
+		</span>
+	  </div>
+
+	  <button (click)="view(product)">View</button>
+  
+	  <!-- <button  (click)="addToCart()">Add To Cart</button><br>
+	  <button *ngIf="!toDisplay" (click)="goTocart()">Go To Cart</button> -->
+  
+	</div>
+  </div>
+</fieldset>

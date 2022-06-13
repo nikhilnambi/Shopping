@@ -22,7 +22,10 @@ export class SellerloginComponent implements OnInit {
       res=>{
         
         localStorage.setItem('token',res.token);
-        this.router.navigate(['/products']);
+        sessionStorage.setItem('sellername',res.seller.sellername);
+        sessionStorage.setItem('id',res.seller.id);
+
+        this.router.navigate(['/sellerhome']);
       },(err)=>{
        
         this.errormessage=err.error.message;

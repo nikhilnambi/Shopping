@@ -1,0 +1,24 @@
+<header>
+    <div class="container">
+      <a routerLink="/home" class="logo">Organic Farm Fresh</a>
+      <nav>
+        <ul>
+           
+              <li  class="menu-container">
+            <a routerLink="/sellerhome">Hello,{{getName()}} </a>
+            <!-- <div  class="menu" style="padding-left: 20px;">
+              <a routerLink="/profile">Profile</a>
+              <a routerLink="/orders">Orders</a> -->
+             
+            <!-- </div> -->
+          </li>
+          <li>
+           <a routerLink="/add-product"> Sell Product </a>
+          </li>
+          <li>
+            <a (click)="logoutSeller()">LogOut</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>

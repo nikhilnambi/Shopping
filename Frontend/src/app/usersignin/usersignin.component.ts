@@ -23,8 +23,16 @@ export class UsersigninComponent implements OnInit {
     .subscribe(
       res=>{
         
+       
+
         localStorage.setItem('token',res.token);
-        this.router.navigate(['/products']);
+        sessionStorage.setItem('username',res.user.username);
+        sessionStorage.setItem('id',res.user.id);
+        
+        
+        
+        this.router.navigate(['/home']);
+
       },(err)=>{
        
         this.errormessage=err.error.message;

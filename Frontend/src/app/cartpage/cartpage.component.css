@@ -1,0 +1,16 @@
+th,td{
+    font-size:large;
+}
+.container{
+    margin-top:3rem ;
+}
+
+.add{
+    padding-top:20px;
+    padding-left:10px;
+}
+
+a{
+    text-decoration: none;
+    color:antiquewhite;
+}
