@@ -8,7 +8,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class ProductdataService {
 
   constructor(private http:HttpClient) { }
+  
 
+  //seller adding product
   productData(item:any){
     return this.http.post("http://localhost:2000/add-product",{"productdata":item})
     .subscribe(data=>{console.log(data)})

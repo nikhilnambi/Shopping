@@ -215,7 +215,7 @@ app.post('/sellerlogin',function(req,res){
 
     //seller adding product to database
 
-    app.post('/add-product',verifyToken,function(req,res){
+    app.post('/add-product',function(req,res){
        
   res.header("Access-Control-Allow-Orgin","*")
   res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
@@ -348,7 +348,7 @@ app.post('/sellerlogin',function(req,res){
 
     //for single product
 
-    app.get("/get-cart-product/:_id",verifyToken,function(req,res){
+    app.get("/get-cart-product/:_id",function(req,res){
       
       const _id = req.params._id;
 
@@ -362,7 +362,7 @@ app.post('/sellerlogin',function(req,res){
 
       //user adding product to cart
 
-      app.post('/add-to-cart',verifyToken,function(req,res){
+      app.post('/add-to-cart',function(req,res){
         res.header("Access-Control-Allow-Orgin","*")
         res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS");
        
@@ -424,7 +424,9 @@ app.post('/sellerlogin',function(req,res){
       })
 
     })
+      
 
+    
     
   
 
